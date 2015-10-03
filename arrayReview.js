@@ -2,8 +2,10 @@ var threeItems = [1,2,3];
 //create a function named 'last' that returns the last item from 'threeItems'
 //alert the result of your function
 
-  //code here
-
+  
+function last() {
+	return threeItems[threeIteams.length-1]
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -11,33 +13,59 @@ var threeItems = [1,2,3];
 
 
 //Loop through evenArray removing all values that aren't even 
-var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
-  //code here
+  function evenFinder(arr) {
+  for (var i = arr.length; i >= 0; i--) {
+  	if (arr[i] %2 !== 0) {
+  		arr.splice(i, 1);
+  	}
+  }
+  return arr;
+}
+
+evenFinder(evenArray);
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//below you're given a function that will return a random number between 0 and 30 and an array full or numbers 'randomArray'. Your job is to write a function that will get a random number, then loop through the array to see if that random number is in the array. If it is, alert true, if it's not, alert false
+//below you're given a function that will return a random number between 0 and 30 and an array full or numbers 'randomArray'. 
+//Your job is to write a function that will get a random number, then loop through the array to see if that random number is in 
+//the array. If it is, alert true, if it's not, alert false
+
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 }
 var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
-  //code here
+  function finder (arr) {
+  	for (var i = arr.length; i >= 0; i--) {
+  		var randNum = getRandomArbitrary()
+  		if(arr.indexOf(randNum) != -1) {
+  			return console.log("true", randNum);
+  		} else {
+  			console.log("false", randNum);
+  		}
+  	}
+  }
+  
+finder(randomArray);
+
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//Create a copy of first and save it into second. Then, add 6 and 7 to the end of second. When you run this, first should be just [1,2,3,4,5] and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
+//Create a copy of first and save it into second. Then, add 6 and 7 to the end of second. 
+//When you run this, first should be just [1,2,3,4,5] and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
 var first = [1,2,3,4,5];
 var second;
 
-  //code here
+    var second = first.slice();
+    second.push(6,7);
+
 
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
@@ -51,7 +79,21 @@ alert(second) //[1,2,3,4,5,6,7];
 //write a function called longest that takes in our sentence variable, and returns the longest word in that sentence.
 var sentence = "Dev Mountain is the best"
 
-  //code here
+
+  function longest (str) {
+  	var array = sentence.split(" ");
+  	var longestword = 0;
+  	var word;
+  	for (var i = 0; i < array.length; i++) {
+  		if(array[i].length > longestword) {
+  			longestword = array[i].length;
+  			word = array[i];
+  		}
+  	}
+  		return word;
+  }
+  
+  longest(sentence);
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -62,8 +104,20 @@ var sentence = "Dev Mountain is the best"
 var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
-  //code here
-
+ function capitalize (sentence) {
+  	var array = sentence.split(" ");
+  	for (var i = 0; i < array.length; i++) {
+  	    var word = array[i];
+  	    word = word[0].toUpperCase() + word.slice(1);
+  	    array[i] = word;
+  	}
+  	
+  	var capSentence = array.join(' ');
+  	return capSentence;
+ }
+ 
+ capitalize(myPoem);
+  	
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
